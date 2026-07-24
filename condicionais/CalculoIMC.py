@@ -7,5 +7,5 @@ if imc<18.5:
     print(f"IMC-{imc:.2f}\nAbaixo do peso.")
 elif imc>=18.5 and imc<25:
     print(f"IMC-{imc:.2f}\nPeso normal.")
-elif imc>=25:
+else:
     print(f"IMC-{imc:.2f}\nAcima do peso.")
