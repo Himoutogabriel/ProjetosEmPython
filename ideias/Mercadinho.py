@@ -11,28 +11,38 @@ produtos=[]
 
 def buscar():
     busca=int(input("Entre com o codigo do item que deseja buscar:"))
+    os.system("cls")
     for i in range(len(produtos)):
         if busca==produtos[i].codigo:
-            print("Produto encontrado!")
+            print(f"Produto do código:({produtos[i].codigo}) encontrado!")
             return 1
-    print("Produto não encontrado.")
+    print(f"Produto do codigo :({produtos[i].codigo}) não encontrado.")
     return 0
 
 def vendas():
     venda=[]
     total=0
     while(True):
-        busca=int(input("Qual produto deseja adicionar na venda?"))
+        busca=int(input("Qual produto deseja adicionar na venda?\n"))
+        os.system("cls")
         for i in range(len(produtos)):
             if busca==produtos[i].codigo:
                 if produtos[i].estoque>0:
-                    venda.append(produtos[i].nome)
+                    venda.append({
+                        "nome": produtos[i].nome,
+                        "valor": produtos[i].valor
+                    })
                     total+=produtos[i].valor
                     produtos[i].estoque-=1
                     break
-        op=int(input("Deseja fechar a venda?\n0-Não\n1-Sim"))
+                else:
+                    print("Não tem estoque desse produto.")
+                    break
+        op=int(input("Deseja fechar a venda?\n0-Não\n1-Sim\n"))
+        os.system("cls")
         if op==1:
-            print(venda)
+            for i in range(len(venda)):
+                print(f"Produto({i+1})-Nome:{venda[i]['nome']} Valor:{venda[i]['valor']}\n")
             print(f"Valor da venda: {total}")
             break
 
@@ -43,6 +53,7 @@ def cadastrar_produto():
     estoque=int(input("Entre com a quantidade do estoque:"))
     p=Produto(codigo,nome,valor,estoque)
     produtos.append(p)
+    os.system("cls")
     print("Produto cadastrado com sucesso!")
     
 def remover_produto():
@@ -66,7 +77,9 @@ while(True):
     elif op==4:
         remover_produto()
     elif op==5:
-        print(produtos)
+        for produto in produtos:
+            print(produto)
+            print("\n")
     elif op==6:
         break
     else:
