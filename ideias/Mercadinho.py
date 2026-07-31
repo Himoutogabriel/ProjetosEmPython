@@ -79,7 +79,6 @@ while(True):
     elif op==5:
         for produto in produtos:
             print(produto)
-            print("\n")
     elif op==6:
         break
     else:
