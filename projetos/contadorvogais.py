@@ -2,8 +2,7 @@ import os
 string=input("Entre com o texto:")
 contVogal=0
 vogais=['a','e','i','o','u']
-string.lower()
-for i in string:
+for i in string.lower():
     for j in vogais:
         if i==j:
             contVogal+=1
