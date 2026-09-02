@@ -48,5 +48,5 @@ while(True):
         break
     else:
         print("Opção inválida. \nEncerrando...")
-        exit(True)
+        exit(True) 
 #coisas pra alterar: integrar postgresql, encapsulamento, arrumar impressão de numero da conta e agencia, deixar mais bonito

@@ -19,7 +19,7 @@ class Conta:
 
     def Status(self):
         self.status=not self.status
-
+ 
     def consulta_conta(self):
         print(f"Titular={self.titular.nome}\nIdade={self.titular.idade}\nSaldo={self.saldo}\nStatus={self.status}\nNumero={self.numero}\nAgencia={self.agencia}\n")
 

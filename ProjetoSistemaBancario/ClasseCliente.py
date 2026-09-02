@@ -4,7 +4,7 @@ class Cliente(Pessoa):
 
     def __init__(self):
         super().__init__()
-        self.idade=None
+        self.idade=None #virar de pessoa
         self.cep=''
         self.estado=''
         self.cidade=''
@@ -22,7 +22,7 @@ class Cliente(Pessoa):
         url = f"https://viacep.com.br/ws/{cep}/json/"
         resposta = requests.get(url)
         dados = resposta.json()   
-        self.estado=dados["uf"]
+        self.estado=dados["uf"] 
         self.cidade=dados["localidade"]
         self.bairro=dados["bairro"]
         print(f"Nome={self.nome}\nCPF={self.cpf}\nData de nascimento={self.data_nascimento}\nIdade={self.idade}\nEndereço={self.estado}/{self.cidade}/{self.bairro}\n")
